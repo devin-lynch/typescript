@@ -1,19 +1,56 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) { // core primitives are ALWAYS in lowercase (string not String)
-    // if (typeof n1 !== 'number' || typeof n2 !== 'number') { 
-    //     throw new Error('Incorrect Input!');
-    // }
-    const result = n1 + n2;
-    if (showResult) {
-        console.log(phrase + result);
-    } else {
-        return result;
-    }
+// const person: {
+//     name: string;
+//     age: number;
+// } = {
+const person: {
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string]; // tuple type! 
+} = {
+    name: 'Maximilian',
+    age: 30,
+    hobbies: ['Sports', 'Cooking'],  // hobbies is type string[]
+    role: [2, 'author']
+};
+
+// person.role.push('admin');
+// person.role[1] = 10;
+
+// person.role = [0, 'admin', 'user'];
+
+let favoriteActivities: string[]; // can use any[], but that removes the benefits of typescript
+favoriteActivities = ['Sports'];
+
+console.log(person.name);
+
+for (const hobby of person.hobbies) {
+    console.log(hobby.toUpperCase()) // method available because hobby is a string type
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = 'Result is: ';
 
-const result = add(number1, number2, printResult, resultPhrase);
-console.log(result);
+
+
+// ## # ## # ## # ## # ## # ## #
+
+// // js object
+// const product = {
+//     id: 'abc1',
+//     price: 12.99,
+//     tags: ['great-offer', 'hot-and-new'],
+//     details: {
+//       title: 'Red Carpet',
+//       description: 'A great carpet - almost brand-new!'
+//     }
+// }
+
+// // the type of above object
+// // {
+// //     id: string;
+// //     price: number;
+// //     tags: string[];
+// //     details: {
+// //       title: string;
+// //       description: string;
+// //     }
+// // }
