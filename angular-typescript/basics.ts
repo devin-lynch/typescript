@@ -27,19 +27,19 @@ isInstructor = true;
 let hobbies: string[]; // an array of strings
 hobbies = ['Sports', 'Cooking'];
 
-let person: {
-    name: string,
-    age: number
-}; 
-person = {
-    name: 'Max',
-    age: 29
-};
+// let person: {
+//     name: string,
+//     age: number
+// }; 
+// person = {
+//     name: 'Max',
+//     age: 29
+// };
 
-let people: {  // storing an array of objects!
-    name: string;
-    age: number;
-}[]; // notice the brackets after the object!
+// let people: {  // storing an array of objects!
+//     name: string;
+//     age: number;
+// }[]; // notice the brackets after the object!
 
 // # ## # ## # ## # ## # ## # ## # ## #
 
@@ -48,3 +48,24 @@ let people: {  // storing an array of objects!
 
 let course = 'React - The Complete Guide';
 // course = 12341; // by default typescript tries infer as many types as possible without you explicitly stating the type. Above, we immediately initialized 'course' with a string type!
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Union types
+
+let lesson: string | number; // allows multiple types by adding a 'pipe'
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Type aliases
+
+type Person = {
+    name: string,
+    age: number
+}; 
+
+let person: Person;
+
+let people: Person[];
