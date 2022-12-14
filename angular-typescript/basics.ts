@@ -69,3 +69,33 @@ type Person = {
 let person: Person;
 
 let people: Person[];
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Functions & types
+
+function add(a: number, b: number) {
+    return a + b; // this return is using type inference! (number obviously) -- remember that functions not only use type for the params, but also the return value!
+}
+
+function printOutput(value: any) { // has a special return type: void. this function never returns! will be undefined as void type.
+    console.log(value);
+}
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Generics
+
+function insertAtBeginning<T>(array: T[], value: T) {  // standard practice to use 'T' in the '<>' -- tells us that the array type should be the same as the value type!
+    const newArray = [value, ...array]; // spread operator
+    return newArray;
+}
+
+const demoArray = [1, 2, 3];
+
+const updatedArray = insertAtBeginning(demoArray, -1); // [-1, 1, 2, 3]
+insertAtBeginning(['a', 'b', 'c'], 'd') // array type matches value type!
+
+// updatedArray[0].split(''); // can't call split on a number, but since we used the 'any' type definition initially, typescript wouldn't know!
