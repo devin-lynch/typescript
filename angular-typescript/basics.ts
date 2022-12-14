@@ -141,3 +141,34 @@ student.listCourses() // Angular, React
 
 // student.courses => Angular, React
 
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Interfaces -- feature which only exists in TS, not vanilla JS. any interface code will NOT be compiled to JS! Object type definitions.
+
+interface Human {
+    firstName: string;
+    age: number;
+
+    greet: () => void; // how to add a method
+}
+
+let max: Human;
+
+max = {
+    firstName: 'Max',
+    age: 32,
+    greet() {
+        console.log('Hello!');
+    },
+};
+
+// Interfaces can be implemented by classes. When they are, they force classes to have that structure defined by interfaces. This can be helpful if you're building an app with multiple devs and want to be sure a certain class has a specific structure. 
+class Instructor implements Human {
+    firstName: string;
+    age: number;
+    greet() {
+        console.log('Hello!')
+    }
+}
+
