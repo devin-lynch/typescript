@@ -99,3 +99,45 @@ const updatedArray = insertAtBeginning(demoArray, -1); // [-1, 1, 2, 3]
 insertAtBeginning(['a', 'b', 'c'], 'd') // array type matches value type!
 
 // updatedArray[0].split(''); // can't call split on a number, but since we used the 'any' type definition initially, typescript wouldn't know!
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Classes
+
+class Student {
+    // firstName: string;
+    // lastName: string;
+    // age: number;
+    // private courses: string[]; // private keyword in front of property definition!
+
+    // constructor(first: string, last: string, age: number, courses: string[]) {
+    //     this.firstName = first;
+    //     this.lastName = last;
+    //     this.age = age;
+    //     this.courses = courses;
+    // }
+
+    constructor(  // same result as the code above! shorthand notation. defines the types, properties, and the values of the properties
+        public firstName: string,
+        public lastName: string,
+        public age: number,
+        private courses: string[]
+    ) {}
+
+    enroll(courseName: string) { // no function keyword! this is a method!
+        this.courses.push(courseName)
+    }
+
+    listCourses() {
+        return this.courses.slice();
+    }
+}
+
+const student = new Student('Max', 'Schwarz', 29, ['Angular']);
+student.enroll('React'); // public methods/properties can be accessed outside of the class using dot notation -- private cannot!
+// student.courses // would result in an error due to the private keyword! dot notation unavailable!
+student.listCourses() // Angular, React
+
+// student.courses => Angular, React
+
