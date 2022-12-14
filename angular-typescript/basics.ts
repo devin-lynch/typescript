@@ -2,6 +2,7 @@
 // More complex types: arrays, objects
 // Function types, parameters
 
+// # ## # ## # ## # ## # ## # ## # ## #
 
 
 // Primatives
@@ -18,6 +19,7 @@ isInstructor = true;
 // let hobbies: null; // typically don't delcare a null type
 // hobbies = 12;
 
+// # ## # ## # ## # ## # ## # ## # ## #
 
 
 // More complex types
@@ -38,3 +40,11 @@ let people: {  // storing an array of objects!
     name: string;
     age: number;
 }[]; // notice the brackets after the object!
+
+// # ## # ## # ## # ## # ## # ## # ## #
+
+
+// Type inference
+
+let course = 'React - The Complete Guide';
+// course = 12341; // by default typescript tries infer as many types as possible without you explicitly stating the type. Above, we immediately initialized 'course' with a string type!
